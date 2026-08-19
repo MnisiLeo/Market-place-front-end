@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+SM Properties | Admin
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5eee4;
+    color:#2b2118;
+}
+
+header{
+    background:#3b2418;
+    color:white;
+    padding:20px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo h1{
+    font-size:22px;
+}
+
+.logo span{
+    color:#f2c14e;
+    font-size:13px;
+}
+
+.home-btn{
+    background:#d9a441;
+    color:#2b1b12;
+    padding:10px 18px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.page-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.page-title h2{
+    color:#3b2418;
+    font-size:32px;
+}
+
+.page-title p{
+    color:#6b5e54;
+    margin-top:7px;
+}
+
+.tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.tab{
+    border:none;
+    background:#d8c7b4;
+    color:#3b2418;
+    padding:12px 25px;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.tab.active{
+    background:#3b2418;
+    color:white;
+}
+
+.form-section{
+    display:none;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+    margin-bottom:35px;
+}
+
+.form-section.active{
+    display:block;
+}
+
+.form-section h3{
+    color:#3b2418;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+label{
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:6px;
+    color:#3b2418;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+
+    border:1px solid #d7c8b8;
+    border-radius:5px;
+
+    font-family:Arial;
+    font-size:14px;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#d9a441;
+}
+
+.image-box{
+    border:2px dashed #d0bd9f;
+    padding:20px;
+    border-radius:7px;
+    background:#fcf8f2;
+}
+
+.image-box input{
+    border:none;
+    padding:0;
+    background:none;
+}
+
+.preview{
+    display:none;
+    margin-top:15px;
+    width:220px;
+    height:150px;
+    object-fit:cover;
+    border-radius:7px;
+}
+
+.save-btn{
+    margin-top:20px;
+
+    border:none;
+
+    background:#3b2418;
+    color:white;
+
+    padding:13px 25px;
+
+    border-radius:5px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.save-btn:hover{
+    background:#d9a441;
+    color:#2b1b12;
+}
+
+.listings-title{
+    margin:40px 0 20px;
+    color:#3b2418;
+}
+
+.listings{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+}
+
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:18px;
+}
+
+.card-body h4{
+    color:#3b2418;
+    margin-bottom:6px;
+}
+
+.card-body p{
+    color:#6b5e54;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.card-buttons{
+    display:flex;
+    gap:8px;
+    margin-top:15px;
+}
+
+.delete-btn{
+    border:none;
+    background:#8b3a2f;
+    color:white;
+    padding:9px 13px;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+.empty{
+    grid-column:1/-1;
+    background:white;
+    padding:35px;
+    text-align:center;
+    color:#6b5e54;
+    border-radius:8px;
+}
+
+.message{
+    display:none;
+    background:#e4f3e5;
+    color:#285b2c;
+    padding:12px;
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+@media(max-width:750px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .listings{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+<h1>
+SM PROPERTIES
+</h1>
+
+<span>
+AND LIVESTOCK BROKERS — ADMIN
+</span>
+
+</div>
+
+
+<a
+href="index.html"
+class="home-btn">
+
+View Website
+
+</a>
+
+</header>
+
+
+<div class="container">
+
+
+<div class="page-title">
+
+<h2>
+Website Administration
+</h2>
+
+<p>
+Add and manage property and cattle listings.
+</p>
+
+</div>
+
+
+<div
+class="message"
+id="message">
+
+Listing saved successfully.
+
+</div>
+
+
+<div class="tabs">
+
+
+<button
+class="tab active"
+onclick="showTab('properties',this)">
+
+Properties
+
+</button>
+
+
+<button
+class="tab"
+onclick="showTab('cattle',this)">
+
+Cattle
+
+</button>
+
+
+</div>
+
+
+<!-- PROPERTY FORM -->
+
+<section
+id="properties"
+class="form-section active">
+
+<h3>
+Add Property
+</h3>
+
+
+<form id="propertyForm">
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Property Title
+</label>
+
+<input
+type="text"
+id="propertyTitle"
+placeholder="e.g. Agricultural Land"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Location
+</label>
+
+<input
+type="text"
+id="propertyLocation"
+placeholder="e.g. Manzini"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Land Size
+</label>
+
+<input
+type="text"
+id="propertySize"
+placeholder="e.g. 25 hectares">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Property Type
+</label>
+
+<select id="propertyType">
+
+<option>
+Agricultural Land
+</option>
+
+<option>
+Farm
+</option>
+
+<option>
+Residential Land
+</option>
+
+<option>
+Commercial Property
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Price
+</label>
+
+<input
+type="text"
+id="propertyPrice"
+placeholder="e.g. E1,500,000">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Status
+</label>
+
+<select id="propertyStatus">
+
+<option value="AVAILABLE">
+AVAILABLE
+</option>
+
+<option value="SOLD">
+SOLD
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Description
+</label>
+
+<textarea
+id="propertyDescription"
+placeholder="Describe the property..."></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Property Picture
+</label>
+
+<div class="image-box">
+
+<input
+type="file"
+id="propertyImage"
+accept="image/*"
+required>
+
+<img
+id="propertyPreview"
+class="preview"
+alt="Property preview">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="save-btn">
+
+Save Property
+
+</button>
+
+
+</form>
+
+</section>
+
+
+<!-- CATTLE FORM -->
+
+<section
+id="cattle"
+class="form-section">
+
+<h3>
+Add Cattle
+</h3>
+
+
+<form id="cattleForm">
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Cattle Title
+</label>
+
+<input
+type="text"
+id="cattleTitle"
+placeholder="e.g. Brahman Bull"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Location
+</label>
+
+<input
+type="text"
+id="cattleLocation"
+placeholder="e.g. Manzini"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Breed
+</label>
+
+<input
+type="text"
+id="cattleBreed"
+placeholder="e.g. Brahman">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Age
+</label>
+
+<input
+type="text"
+id="cattleAge"
+placeholder="e.g. 3 years">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Price
+</label>
+
+<input
+type="text"
+id="cattlePrice"
+placeholder="e.g. E25,000">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Status
+</label>
+
+<select id="cattleStatus">
+
+<option value="AVAILABLE">
+AVAILABLE
+</option>
+
+<option value="SOLD">
+SOLD
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Description
+</label>
+
+<textarea
+id="cattleDescription"
+placeholder="Describe the cattle..."></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Cattle Picture
+</label>
+
+<div class="image-box">
+
+<input
+type="file"
+id="cattleImage"
+accept="image/*"
+required>
+
+<img
+id="cattlePreview"
+class="preview"
+alt="Cattle preview">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="save-btn">
+
+Save Cattle
+
+</button>
+
+
+</form>
+
+</section>
+
+
+<!-- PROPERTY LIST -->
+
+<h3 class="listings-title">
+Saved Properties
+</h3>
+
+<div
+class="listings"
+id="propertyList">
+
+</div>
+
+
+<!-- CATTLE LIST -->
+
+<h3 class="listings-title">
+Saved Cattle
+</h3>
+
+<div
+class="listings"
+id="cattleList">
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+/* ================================
+   STORAGE
+================================ */
+
+
+let properties =
+JSON.parse(
+localStorage.getItem(
+"smPropertyListings"
+)
+) || [];
+
+
+let cattle =
+JSON.parse(
+localStorage.getItem(
+"smCattleListings"
+)
+) || [];
+
+
+/* ================================
+   TABS
+================================ */
+
+
+function showTab(tabName,button){
+
+document
+.querySelectorAll(".form-section")
+.forEach(function(section){
+
+section.classList.remove("active");
+
+});
+
+
+document
+.querySelectorAll(".tab")
+.forEach(function(tab){
+
+tab.classList.remove("active");
+
+});
+
+
+document
+.getElementById(tabName)
+.classList.add("active");
+
+
+button.classList.add("active");
+
+}
+
+
+/* ================================
+   IMAGE PREVIEW
+================================ */
+
+
+function previewImage(input,preview){
+
+input.addEventListener(
+"change",
+function(){
+
+const file =
+this.files[0];
+
+if(!file){
+return;
+}
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(event){
+
+preview.src =
+event.target.result;
+
+preview.style.display =
+"block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+
+previewImage(
+document.getElementById(
+"propertyImage"
+),
+document.getElementById(
+"propertyPreview"
+)
+);
+
+
+previewImage(
+document.getElementById(
+"cattleImage"
+),
+document.getElementById(
+"cattlePreview"
+)
+);
+
+
+/* ================================
+   PROPERTY SAVE
+================================ */
+
+
+document
+.getElementById("propertyForm")
+.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const file =
+document.getElementById(
+"propertyImage"
+).files[0];
+
+
+if(!file){
+
+alert(
+"Please select a property picture."
+);
+
+return;
+
+}
+
+
+const reader =
+new FileReader();
+
+
+reader.onload =
+function(e){
+
+
+const property = {
+
+id:
+Date.now(),
+
+title:
+document.getElementById(
+"propertyTitle"
+).value,
+
+location:
+document.getElementById(
+"propertyLocation"
+).value,
+
+size:
+document.getElementById(
+"propertySize"
+).value,
+
+type:
+document.getElementById(
+"propertyType"
+).value,
+
+price:
+document.getElementById(
+"propertyPrice"
+).value,
+
+status:
+document.getElementById(
+"propertyStatus"
+).value,
+
+description:
+document.getElementById(
+"propertyDescription"
+).value,
+
+image:
+e.target.result
+
+};
+
+
+properties.push(property);
+
+
+localStorage.setItem(
+"smPropertyListings",
+JSON.stringify(properties)
+);
+
+
+document
+.getElementById("propertyForm")
+.reset();
+
+
+document
+.getElementById("propertyPreview")
+.style.display="none";
+
+
+showMessage();
+
+
+renderProperties();
+
+};
+
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* ================================
+   CATTLE SAVE
+================================ */
+
+
+document
+.getElementById("cattleForm")
+.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const file =
+document.getElementById(
+"cattleImage"
+).files[0];
+
+
+if(!file){
+
+alert(
+"Please select a cattle picture."
+);
+
+return;
+
+}
+
+
+const reader =
+new FileReader();
+
+
+reader.onload =
+function(e){
+
+
+const cow = {
+
+id:
+Date.now(),
+
+title:
+document.getElementById(
+"cattleTitle"
+).value,
+
+location:
+document.getElementById(
+"cattleLocation"
+).value,
+
+breed:
+document.getElementById(
+"cattleBreed"
+).value,
+
+age:
+document.getElementById(
+"cattleAge"
+).value,
+
+price:
+document.getElementById(
+"cattlePrice"
+).value,
+
+status:
+document.getElementById(
+"cattleStatus"
+).value,
+
+description:
+document.getElementById(
+"cattleDescription"
+).value,
+
+image:
+e.target.result
+
+};
+
+
+cattle.push(cow);
+
+
+localStorage.setItem(
+"smCattleListings",
+JSON.stringify(cattle)
+);
+
+
+document
+.getElementById("cattleForm")
+.reset();
+
+
+document
+.getElementById("cattlePreview")
+.style.display="none";
+
+
+showMessage();
+
+
+renderCattle();
+
+};
+
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+
+function showMessage(){
+
+const message =
+document.getElementById(
+"message"
+);
+
+message.style.display =
+"block";
+
+
+setTimeout(function(){
+
+message.style.display =
+"none";
+
+},3000);
+
+}
+
+
+/* ================================
+   RENDER PROPERTIES
+================================ */
+
+
+function renderProperties(){
+
+const container =
+document.getElementById(
+"propertyList"
+);
+
+
+container.innerHTML="";
+
+
+if(properties.length===0){
+
+container.innerHTML=`
+
+<div class="empty">
+
+No properties have been added yet.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+properties.forEach(
+function(property,index){
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className="card";
+
+
+card.innerHTML=`
+
+<img
+src="${property.image}"
+alt="Property"
+>
+
+<div class="card-body">
+
+<h4>
+${property.title}
+</h4>
+
+<p>
+Location:
+${property.location}
+</p>
+
+<p>
+Size:
+${property.size || "Not provided"}
+</p>
+
+<p>
+Price:
+${property.price || "Contact Us"}
+</p>
+
+<p>
+Status:
+${property.status}
+</p>
+
+<div class="card-buttons">
+
+<button
+class="delete-btn"
+onclick="deleteProperty(${index})">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* ================================
+   RENDER CATTLE
+================================ */
+
+
+function renderCattle(){
+
+const container =
+document.getElementById(
+"cattleList"
+);
+
+
+container.innerHTML="";
+
+
+if(cattle.length===0){
+
+container.innerHTML=`
+
+<div class="empty">
+
+No cattle have been added yet.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+cattle.forEach(
+function(cow,index){
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className="card";
+
+
+card.innerHTML=`
+
+<img
+src="${cow.image}"
+alt="Cattle"
+>
+
+<div class="card-body">
+
+<h4>
+${cow.title}
+</h4>
+
+<p>
+Location:
+${cow.location}
+</p>
+
+<p>
+Breed:
+${cow.breed || "Not provided"}
+</p>
+
+<p>
+Age:
+${cow.age || "Not provided"}
+</p>
+
+<p>
+Price:
+${cow.price || "Contact Us"}
+</p>
+
+<p>
+Status:
+${cow.status}
+</p>
+
+<div class="card-buttons">
+
+<button
+class="delete-btn"
+onclick="deleteCattle(${index})">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* ================================
+   DELETE PROPERTY
+================================ */
+
+
+function deleteProperty(index){
+
+if(
+confirm(
+"Delete this property?"
+)
+){
+
+properties.splice(
+index,
+1
+);
+
+localStorage.setItem(
+"smPropertyListings",
+JSON.stringify(properties)
+);
+
+renderProperties();
+
+}
+
+}
+
+
+/* ================================
+   DELETE CATTLE
+================================ */
+
+
+function deleteCattle(index){
+
+if(
+confirm(
+"Delete this cattle listing?"
+)
+){
+
+cattle.splice(
+index,
+1
+);
+
+localStorage.setItem(
+"smCattleListings",
+JSON.stringify(cattle)
+);
+
+renderCattle();
+
+}
+
+}
+
+
+/* ================================
+   INITIAL DISPLAY
+================================ */
+
+
+renderProperties();
+
+renderCattle();
+
+
+</script>
+
+
+</body>
+
+</html>

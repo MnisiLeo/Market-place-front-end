@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+SM Properties | Cattle
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f1e7;
+    color:#2b2118;
+}
+
+.top-bar{
+    background:#2b1b12;
+    color:#f2c14e;
+    text-align:center;
+    padding:8px;
+    font-size:13px;
+}
+
+header{
+    background:#3b2418;
+    padding:18px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+}
+
+.logo h1{
+    color:white;
+    font-size:22px;
+}
+
+.logo span{
+    color:#f2c14e;
+    font-size:13px;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#f2c14e;
+}
+
+.contact{
+    background:#d9a441;
+    color:#2b1b12 !important;
+    padding:10px 16px;
+    border-radius:5px;
+}
+
+.hero{
+    background:#3b2418;
+    color:white;
+    text-align:center;
+    padding:65px 20px;
+}
+
+.hero small{
+    color:#f2c14e;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin:10px 0;
+}
+
+.hero p{
+    color:#dfd1c4;
+    max-width:700px;
+    margin:auto;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.filters{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.07);
+}
+
+.filters input,
+.filters select{
+    padding:12px;
+
+    border:1px solid #d7c8b8;
+
+    border-radius:5px;
+
+    font-size:14px;
+}
+
+.listings{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.cattle-card{
+    background:white;
+
+    border-radius:9px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 20px rgba(59,36,24,.12);
+}
+
+.cattle-card img{
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.status{
+    display:inline-block;
+
+    background:#e4f3e5;
+    color:#285b2c;
+
+    padding:5px 9px;
+
+    border-radius:4px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.card-body h3{
+    color:#3b2418;
+    font-size:21px;
+
+    margin-bottom:8px;
+}
+
+.location{
+    color:#8a6a4a;
+
+    font-size:14px;
+
+    margin-bottom:12px;
+}
+
+.details{
+    border-top:1px solid #eee0d2;
+
+    border-bottom:1px solid #eee0d2;
+
+    padding:12px 0;
+
+    margin-bottom:12px;
+}
+
+.details p{
+    font-size:13px;
+    color:#6b5e54;
+
+    margin-bottom:5px;
+}
+
+.price{
+    color:#a97818;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    margin-bottom:15px;
+}
+
+.description{
+    color:#6b5e54;
+
+    font-size:13px;
+
+    margin-bottom:18px;
+}
+
+.contact-btn{
+    display:block;
+
+    background:#3b2418;
+
+    color:white;
+
+    text-align:center;
+
+    padding:11px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+.contact-btn:hover{
+    background:#d9a441;
+    color:#2b1b12;
+}
+
+.empty{
+    grid-column:1/-1;
+
+    background:white;
+
+    text-align:center;
+
+    padding:60px 25px;
+
+    border-radius:9px;
+
+    color:#6b5e54;
+}
+
+.empty h3{
+    color:#3b2418;
+    margin-bottom:10px;
+}
+
+footer{
+    background:#24150e;
+    color:white;
+
+    padding:40px 7% 20px;
+}
+
+.footer-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+footer h3{
+    color:#f2c14e;
+    margin-bottom:12px;
+}
+
+footer a,
+footer p{
+    display:block;
+
+    color:#d7cabe;
+
+    font-size:14px;
+
+    margin-bottom:7px;
+
+    text-decoration:none;
+}
+
+.copy{
+    border-top:1px solid #4a3528;
+
+    margin-top:30px;
+
+    padding-top:18px;
+
+    text-align:center;
+
+    color:#b9a99c;
+
+    font-size:13px;
+}
+
+@media(max-width:800px){
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .listings{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .listings{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="top-bar">
+
+SM PROPERTIES AND LIVESTOCK BROKERS
+| ESWATINI
+
+</div>
+
+
+<header>
+
+
+<div class="logo">
+
+<h1>
+SM PROPERTIES
+</h1>
+
+<span>
+AND LIVESTOCK BROKERS
+</span>
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a
+href="contact.html"
+class="contact">
+
+Contact
+
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<small>
+LIVESTOCK COLLECTION
+</small>
+
+<h2>
+Cattle For Sale
+</h2>
+
+<p>
+
+Browse cattle currently available
+through SM Properties and Livestock Brokers.
+
+</p>
+
+</section>
+
+
+<div class="container">
+
+
+<div class="filters">
+
+
+<input
+type="text"
+id="search"
+placeholder="Search cattle..."
+>
+
+
+<select id="breedFilter">
+
+<option value="">
+All Breeds
+</option>
+
+</select>
+
+
+<select id="locationFilter">
+
+<option value="">
+All Locations
+</option>
+
+</select>
+
+
+</div>
+
+
+<div
+class="listings"
+id="cattleListings">
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+SM Properties
+</h3>
+
+<p>
+Connecting Opportunities. Closing Deals.
+</p>
+
+<p>
+Professional property and livestock
+brokerage services in Eswatini.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+WhatsApp: Coming Soon
+</p>
+
+<p>
+Email: Coming Soon
+</p>
+
+<p>
+Facebook: Coming Soon
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copy">
+
+© 2026 SM Properties and Livestock Brokers.
+All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+
+/* ================================
+   LOAD CATTLE FROM ADMIN
+================================ */
+
+
+let cattle =
+JSON.parse(
+localStorage.getItem(
+"smCattleListings"
+)
+) || [];
+
+
+/* ================================
+   DISPLAY CATTLE
+================================ */
+
+
+function displayCattle(){
+
+const container =
+document.getElementById(
+"cattleListings"
+);
+
+const search =
+document.getElementById(
+"search"
+).value.toLowerCase();
+
+const breed =
+document.getElementById(
+"breedFilter"
+).value;
+
+const location =
+document.getElementById(
+"locationFilter"
+).value;
+
+
+container.innerHTML="";
+
+
+const filtered =
+cattle.filter(
+function(cow){
+
+const matchesSearch =
+
+(
+cow.title || ""
+).toLowerCase()
+.includes(search)
+
+||
+
+(
+cow.description || ""
+).toLowerCase()
+.includes(search)
+
+||
+
+(
+cow.breed || ""
+).toLowerCase()
+.includes(search)
+
+||
+
+(
+cow.location || ""
+).toLowerCase()
+.includes(search);
+
+
+const matchesBreed =
+!breed ||
+cow.breed === breed;
+
+
+const matchesLocation =
+!location ||
+cow.location === location;
+
+
+return
+matchesSearch &&
+matchesBreed &&
+matchesLocation;
+
+});
+
+
+if(filtered.length===0){
+
+container.innerHTML=`
+
+<div class="empty">
+
+<h3>
+No Cattle Found
+</h3>
+
+<p>
+There are currently no matching
+cattle listings available.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+filtered.forEach(
+function(cow){
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className=
+"cattle-card";
+
+
+card.innerHTML=`
+
+<img
+src="${cow.image}"
+alt="${cow.title}"
+>
+
+
+<div class="card-body">
+
+
+<span class="status">
+
+${cow.status || "AVAILABLE"}
+
+</span>
+
+
+<h3>
+
+${cow.title}
+
+</h3>
+
+
+<p class="location">
+
+📍 ${cow.location}
+
+</p>
+
+
+<div class="details">
+
+<p>
+
+<strong>
+Breed:
+</strong>
+
+${cow.breed || "Not specified"}
+
+</p>
+
+
+<p>
+
+<strong>
+Age:
+</strong>
+
+${cow.age || "Not specified"}
+
+</p>
+
+</div>
+
+
+<div class="price">
+
+${cow.price || "Contact Us"}
+
+</div>
+
+
+<p class="description">
+
+${cow.description || ""}
+
+</p>
+
+
+<a
+href="contact.html"
+class="contact-btn">
+
+Enquire About Cattle
+
+</a>
+
+
+</div>
+
+`;
+
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* ================================
+   LOAD BREEDS
+================================ */
+
+
+function loadBreeds(){
+
+const breedFilter =
+document.getElementById(
+"breedFilter"
+);
+
+
+const breeds =
+[
+...new Set(
+cattle
+.map(
+function(cow){
+
+return cow.breed;
+
+}
+)
+)
+];
+
+
+breeds.forEach(
+function(breed){
+
+if(!breed){
+return;
+}
+
+const option =
+document.createElement(
+"option"
+);
+
+option.value=breed;
+
+option.textContent=breed;
+
+breedFilter.appendChild(
+option
+);
+
+});
+
+}
+
+
+/* ================================
+   LOAD LOCATIONS
+================================ */
+
+
+function loadLocations(){
+
+const locationFilter =
+document.getElementById(
+"locationFilter"
+);
+
+
+const locations =
+[
+...new Set(
+cattle
+.map(
+function(cow){
+
+return cow.location;
+
+}
+)
+)
+];
+
+
+locations.forEach(
+function(location){
+
+if(!location){
+return;
+}
+
+const option =
+document.createElement(
+"option"
+);
+
+option.value=location;
+
+option.textContent=location;
+
+locationFilter.appendChild(
+option
+);
+
+});
+
+}
+
+
+/* ================================
+   FILTER EVENTS
+================================ */
+
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+displayCattle
+);
+
+
+document
+.getElementById("breedFilter")
+.addEventListener(
+"change",
+displayCattle
+);
+
+
+document
+.getElementById("locationFilter")
+.addEventListener(
+"change",
+displayCattle
+);
+
+
+/* ================================
+   START
+================================ */
+
+
+loadBreeds();
+
+loadLocations();
+
+displayCattle();
+
+
+</script>
+
+
+</body>
+
+</html>

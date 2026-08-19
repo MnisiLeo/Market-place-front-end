@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+SM Properties & Livestock Brokers
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f1e7;
+    color:#2b2118;
+}
+
+.top-bar{
+    background:#2b1b12;
+    color:#f2c14e;
+    text-align:center;
+    padding:8px;
+    font-size:13px;
+}
+
+header{
+    background:#3b2418;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo h1{
+    color:white;
+    font-size:22px;
+}
+
+.logo span{
+    color:#f2c14e;
+    font-size:13px;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#f2c14e;
+}
+
+.contact{
+    background:#d9a441;
+    color:#2b1b12 !important;
+    padding:10px 16px;
+    border-radius:5px;
+}
+
+.hero{
+    min-height:520px;
+    padding:80px 7%;
+    display:flex;
+    align-items:center;
+    color:white;
+
+    background:
+    linear-gradient(
+        rgba(59,36,24,.78),
+        rgba(59,36,24,.88)
+    ),
+    url("images/property1.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero small{
+    color:#f2c14e;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.hero h2{
+    font-size:55px;
+    line-height:1.1;
+    margin:15px 0;
+}
+
+.hero h2 span{
+    color:#f2c14e;
+}
+
+.hero p{
+    color:#eee2d2;
+    max-width:700px;
+    margin-bottom:25px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 22px;
+    border-radius:5px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.btn-gold{
+    background:#d9a441;
+    color:#2b1b12;
+}
+
+.btn-outline{
+    border:1px solid white;
+    color:white;
+}
+
+.intro{
+    text-align:center;
+    padding:70px 7%;
+    background:#fffaf2;
+}
+
+.intro small{
+    color:#a97818;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.intro h2{
+    color:#3b2418;
+    font-size:34px;
+    margin:10px 0;
+}
+
+.intro p{
+    max-width:800px;
+    margin:auto;
+    color:#6b5e54;
+}
+
+.section{
+    padding:65px 0;
+}
+
+.heading{
+    text-align:center;
+    padding:0 7%;
+    margin-bottom:30px;
+}
+
+.heading small{
+    color:#a97818;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.heading h2{
+    color:#3b2418;
+    font-size:32px;
+    margin:8px 0;
+}
+
+.heading p{
+    color:#6b5e54;
+}
+
+.scroll{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:10px 7% 25px;
+    scroll-behavior:smooth;
+}
+
+.card{
+    flex:0 0 380px;
+    height:270px;
+    position:relative;
+    overflow:hidden;
+    border-radius:9px;
+    background:#eadfd3;
+
+    box-shadow:
+    0 6px 20px rgba(59,36,24,.15);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:50px 18px 18px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.88)
+    );
+}
+
+.overlay h3{
+    font-size:20px;
+}
+
+.overlay p{
+    font-size:13px;
+    color:#eee2d2;
+}
+
+.empty{
+    flex:0 0 380px;
+    height:270px;
+
+    background:#eadfd3;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#6b5e54;
+
+    border-radius:9px;
+}
+
+.view{
+    text-align:center;
+    margin-top:10px;
+}
+
+.view a{
+    display:inline-block;
+
+    background:#3b2418;
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+.services{
+    background:#3b2418;
+    padding:70px 7%;
+}
+
+.services h2{
+    text-align:center;
+    color:#f2c14e;
+    margin-bottom:35px;
+}
+
+.service-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.service{
+    background:#4a2d1f;
+    color:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:8px;
+}
+
+.service h3{
+    color:#f2c14e;
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#dfd1c4;
+    font-size:14px;
+}
+
+.facebook{
+    text-align:center;
+    padding:60px 7%;
+    background:#fffaf2;
+}
+
+.facebook h2{
+    color:#3b2418;
+    margin-bottom:10px;
+}
+
+.facebook p{
+    color:#6b5e54;
+    margin-bottom:20px;
+}
+
+.facebook-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#1877F2;
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+.facebook-logo{
+    background:white;
+    color:#1877F2;
+
+    width:23px;
+    height:23px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:bold;
+    font-size:18px;
+}
+
+footer{
+    background:#24150e;
+    color:white;
+    padding:45px 7% 20px;
+}
+
+.footer-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+footer h3{
+    color:#f2c14e;
+    margin-bottom:12px;
+}
+
+footer a,
+footer p{
+    display:block;
+
+    color:#d7cabe;
+
+    font-size:14px;
+
+    margin-bottom:7px;
+
+    text-decoration:none;
+}
+
+.copy{
+    border-top:1px solid #4a3528;
+
+    margin-top:30px;
+
+    padding-top:18px;
+
+    text-align:center;
+
+    color:#b9a99c;
+
+    font-size:13px;
+}
+
+@media(max-width:750px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h2{
+        font-size:40px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card,
+    .empty{
+        flex:0 0 310px;
+        height:230px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="top-bar">
+
+SM PROPERTIES AND LIVESTOCK BROKERS
+| ESWATINI
+
+</div>
+
+
+<header>
+
+
+<div class="logo">
+
+<h1>
+SM PROPERTIES
+</h1>
+
+<span>
+AND LIVESTOCK BROKERS
+</span>
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html" class="contact">
+Contact
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<small>
+PROPERTY • LAND • CATTLE
+</small>
+
+<h2>
+
+Connecting
+<span>Opportunities.</span>
+
+<br>
+
+Closing Deals.
+
+</h2>
+
+<p>
+
+SM Properties and Livestock Brokers connects
+buyers and sellers with quality land,
+properties and cattle throughout Eswatini.
+
+</p>
+
+
+<div class="buttons">
+
+<a
+href="properties.html"
+class="btn btn-gold">
+
+View Properties
+
+</a>
+
+
+<a
+href="livestock.html"
+class="btn btn-outline">
+
+View Cattle
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="intro">
+
+<small>
+WELCOME TO SM PROPERTIES
+</small>
+
+<h2>
+Your Trusted Brokerage Partner
+</h2>
+
+<p>
+
+We connect buyers and sellers with suitable
+property, land and cattle opportunities.
+
+</p>
+
+</section>
+
+
+<!-- ==========================
+     PROPERTY SECTION
+========================== -->
+
+
+<section class="section">
+
+
+<div class="heading">
+
+<small>
+LAND & PROPERTY
+</small>
+
+<h2>
+Explore Available Land
+</h2>
+
+<p>
+Our latest property opportunities.
+</p>
+
+</div>
+
+
+<div
+class="scroll"
+id="propertyScroll">
+
+</div>
+
+
+<div class="view">
+
+<a href="properties.html">
+
+View All Properties
+
+</a>
+
+</div>
+
+
+</section>
+
+
+<!-- ==========================
+     CATTLE SECTION
+========================== -->
+
+
+<section class="section">
+
+
+<div class="heading">
+
+<small>
+LIVESTOCK
+</small>
+
+<h2>
+Quality Cattle Available
+</h2>
+
+<p>
+Our latest cattle opportunities.
+</p>
+
+</div>
+
+
+<div
+class="scroll"
+id="cattleScroll">
+
+</div>
+
+
+<div class="view">
+
+<a href="livestock.html">
+
+View All Cattle
+
+</a>
+
+</div>
+
+
+</section>
+
+
+<!-- ==========================
+     SERVICES
+========================== -->
+
+
+<section class="services">
+
+<h2>
+Our Services
+</h2>
+
+
+<div class="service-grid">
+
+
+<div class="service">
+
+<h3>
+Property Brokerage
+</h3>
+
+<p>
+
+Connecting property owners with
+serious buyers.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+Livestock Brokerage
+</h3>
+
+<p>
+
+Connecting cattle owners with
+potential buyers.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+Buyer & Seller Connections
+</h3>
+
+<p>
+
+Helping buyers and sellers find
+the right opportunities.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ==========================
+     FACEBOOK
+========================== -->
+
+
+<section class="facebook">
+
+<h2>
+Follow SM Properties
+</h2>
+
+<p>
+
+Stay updated with new properties
+and cattle listings.
+
+</p>
+
+
+<a
+href="#"
+class="facebook-btn">
+
+<span class="facebook-logo">
+f
+</span>
+
+Follow us on Facebook
+
+</a>
+
+</section>
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+SM Properties
+</h3>
+
+<p>
+Connecting Opportunities. Closing Deals.
+</p>
+
+<p>
+Professional property and livestock
+brokerage services in Eswatini.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+WhatsApp: Coming Soon
+</p>
+
+<p>
+Email: Coming Soon
+</p>
+
+<p>
+Facebook: Coming Soon
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copy">
+
+© 2026 SM Properties and Livestock Brokers.
+All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+
+/* ==========================
+   GET ADMIN DATA
+========================== */
+
+
+const properties =
+JSON.parse(
+localStorage.getItem(
+"smPropertyListings"
+)
+) || [];
+
+
+const cattle =
+JSON.parse(
+localStorage.getItem(
+"smCattleListings"
+)
+) || [];
+
+
+/* ==========================
+   PROPERTY DISPLAY
+========================== */
+
+
+const propertyScroll =
+document.getElementById(
+"propertyScroll"
+);
+
+
+const latestProperties =
+properties.slice(0,3);
+
+
+if(latestProperties.length===0){
+
+propertyScroll.innerHTML=`
+
+<div class="empty">
+
+<div>
+
+<h3>
+No Properties Yet
+</h3>
+
+<p>
+New property listings will appear
+here when added through Admin.
+</p>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+latestProperties.forEach(
+function(property){
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className="card";
+
+
+card.innerHTML=`
+
+<img
+src="${property.image}"
+alt="${property.title}"
+>
+
+
+<div class="overlay">
+
+<h3>
+
+${property.title}
+
+</h3>
+
+<p>
+
+${property.location}
+
+${property.size
+? " • " + property.size
+: ""}
+
+</p>
+
+</div>
+
+`;
+
+
+propertyScroll.appendChild(
+card
+);
+
+});
+
+
+/* ==========================
+   CATTLE DISPLAY
+========================== */
+
+
+const cattleScroll =
+document.getElementById(
+"cattleScroll"
+);
+
+
+const latestCattle =
+cattle.slice(0,3);
+
+
+if(latestCattle.length===0){
+
+cattleScroll.innerHTML=`
+
+<div class="empty">
+
+<div>
+
+<h3>
+No Cattle Yet
+</h3>
+
+<p>
+New cattle listings will appear
+here when added through Admin.
+</p>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+latestCattle.forEach(
+function(cow){
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className="card";
+
+
+card.innerHTML=`
+
+<img
+src="${cow.image}"
+alt="${cow.title}"
+>
+
+
+<div class="overlay">
+
+<h3>
+
+${cow.title}
+
+</h3>
+
+<p>
+
+${cow.breed || "Cattle"}
+
+${cow.location
+? " • " + cow.location
+: ""}
+
+</p>
+
+</div>
+
+`;
+
+
+cattleScroll.appendChild(
+card
+);
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

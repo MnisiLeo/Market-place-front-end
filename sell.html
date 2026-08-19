@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sell With Us | SM Properties & Livestock Brokers</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f1e7;
+    color: #2b2118;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top-bar {
+    background: #2b1b12;
+    color: #f2c14e;
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+header {
+    background: #3b2418;
+    color: white;
+    padding: 18px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.logo-area h1 {
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.logo-area span {
+    display: block;
+    color: #f2c14e;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f2c14e;
+}
+
+.contact-button {
+    background: #d9a441;
+    color: #2b1b12;
+    padding: 10px 17px;
+    border-radius: 5px;
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 70px 7%;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(59,36,24,0.90),
+            rgba(59,36,24,0.90)
+        ),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero h2 span {
+    color: #f2c14e;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    color: #eee2d2;
+}
+
+
+/* FORM SECTION */
+
+.form-section {
+    padding: 70px 7%;
+    background: #fffaf2;
+}
+
+.form-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro small {
+    color: #a97818;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.intro h2 {
+    color: #3b2418;
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.intro p {
+    color: #6b5e54;
+}
+
+
+.form-box {
+    background: white;
+    padding: 35px;
+    border-radius: 9px;
+
+    box-shadow:
+        0 6px 22px
+        rgba(59,36,24,0.10);
+}
+
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    color: #3b2418;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 6px;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d8cbbb;
+
+    border-radius: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    background: #fffdf9;
+
+}
+
+
+.form-group textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    border-color: #d9a441;
+
+}
+
+
+.note {
+    background: #f7f1e7;
+
+    border-left: 4px solid #d9a441;
+
+    padding: 15px;
+
+    margin-bottom: 22px;
+
+    color: #6b5e54;
+
+    font-size: 13px;
+}
+
+
+.submit-button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #3b2418;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.submit-button:hover {
+
+    background: #d9a441;
+
+    color: #2b1b12;
+
+}
+
+
+.success-message {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #e7f2df;
+
+    border-left: 4px solid #5c8a42;
+
+    color: #315223;
+
+    border-radius: 5px;
+
+}
+
+
+/* WHY US */
+
+.why-section {
+
+    padding: 70px 7%;
+
+    background: #f7f1e7;
+
+    text-align: center;
+
+}
+
+
+.why-section h2 {
+
+    color: #3b2418;
+
+    font-size: 32px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.why-grid {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.why-card {
+
+    background: white;
+
+    padding: 25px 20px;
+
+    border-radius: 8px;
+
+}
+
+
+.why-card .icon {
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.why-card h3 {
+
+    color: #3b2418;
+
+    margin-bottom: 7px;
+
+}
+
+
+.why-card p {
+
+    color: #6b5e54;
+
+    font-size: 13px;
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    background: #24150e;
+
+    color: white;
+
+    padding: 45px 7% 20px;
+
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+
+}
+
+
+footer h3 {
+
+    color: #f2c14e;
+
+    margin-bottom: 12px;
+
+}
+
+
+footer p,
+footer a {
+
+    color: #d7cabe;
+
+    font-size: 14px;
+
+    display: block;
+
+    margin-bottom: 7px;
+
+}
+
+
+.copyright {
+
+    border-top: 1px solid #4a3528;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #b9a99c;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    nav {
+
+        justify-content: center;
+
+    }
+
+    .form-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .form-box {
+
+        padding: 23px;
+
+    }
+
+    .why-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero h2 {
+
+        font-size: 34px;
+
+    }
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="top-bar">
+
+SM PROPERTIES AND LIVESTOCK BROKERS
+&nbsp; | &nbsp;
+ESWATINI
+
+</div>
+
+
+<header>
+
+
+<div class="logo-area">
+
+<h1>
+SM PROPERTIES
+</h1>
+
+<span>
+AND LIVESTOCK BROKERS
+</span>
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html"
+class="contact-button">
+Contact
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h2>
+Sell <span>With Us</span>
+</h2>
+
+<p>
+
+Have land or cattle to sell?
+Let SM Properties and Livestock Brokers
+connect your asset with potential buyers.
+
+</p>
+
+</section>
+
+
+<section class="form-section">
+
+
+<div class="form-container">
+
+
+<div class="intro">
+
+<small>
+LIST YOUR ASSET
+</small>
+
+<h2>
+Tell Us What You Want To Sell
+</h2>
+
+<p>
+
+Complete the form below and provide as much
+information as possible about your land or cattle.
+
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+
+<div class="note">
+
+<strong>
+Important:
+</strong>
+
+Submitting this form does not automatically
+guarantee a sale. Our team will review the
+information and contact you to discuss the
+listing and brokerage process.
+
+</div>
+
+
+<form id="sellerForm">
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+Full Name *
+</label>
+
+<input
+type="text"
+name="name"
+placeholder="Your full name"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Phone / WhatsApp *
+</label>
+
+<input
+type="tel"
+name="phone"
+placeholder="Your phone number"
+required
+>
+
+</div>
+
+
+</div>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+What Are You Selling? *
+</label>
+
+<select
+name="asset"
+required
+>
+
+<option value="">
+Select one
+</option>
+
+<option value="Land">
+Land
+</option>
+
+<option value="Cattle">
+Cattle
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Location *
+</label>
+
+<input
+type="text"
+name="location"
+placeholder="Town / area / region"
+required
+>
+
+</div>
+
+
+</div>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+Expected Selling Price
+</label>
+
+<input
+type="text"
+name="price"
+placeholder="e.g. E250,000"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Preferred Contact Method
+</label>
+
+<select name="contact">
+
+<option value="WhatsApp">
+WhatsApp
+</option>
+
+<option value="Phone">
+Phone Call
+</option>
+
+<option value="Either">
+Either
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Land Size / Number of Cattle
+</label>
+
+<input
+type="text"
+name="quantity"
+placeholder="e.g. 15 hectares OR 8 cattle"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Additional Information
+</label>
+
+<textarea
+name="description"
+placeholder="Provide details about the land or cattle, condition, breed, age, access, documents, etc."
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Photo Information
+</label>
+
+<input
+type="text"
+name="photos"
+placeholder="Tell us if you have photos available"
+>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-button"
+>
+
+Submit Selling Enquiry
+
+</button>
+
+
+<div
+class="success-message"
+id="successMessage">
+
+Thank you. Your selling enquiry has been recorded on this device. SM Properties and Livestock Brokers can review the information once a contact method is connected.
+
+</div>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="why-section">
+
+
+<h2>
+Why Sell Through Us?
+</h2>
+
+
+<div class="why-grid">
+
+
+<div class="why-card">
+
+<div class="icon">
+📢
+</div>
+
+<h3>
+Marketing
+</h3>
+
+<p>
+
+We promote available assets through
+our website and social media channels.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="icon">
+🤝
+</div>
+
+<h3>
+Buyer Matching
+</h3>
+
+<p>
+
+We connect your property or cattle
+with potential buyers.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="icon">
+💼
+</div>
+
+<h3>
+Professional Brokerage
+</h3>
+
+<p>
+
+We help facilitate negotiations and
+the transaction process.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+SM Properties
+</h3>
+
+<p>
+Connecting Opportunities. Closing Deals.
+</p>
+
+<p>
+Professional property and livestock
+brokerage services in Eswatini.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+WhatsApp: Coming Soon
+</p>
+
+<p>
+Email: Coming Soon
+</p>
+
+<p>
+Facebook: Coming Soon
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 SM Properties and Livestock Brokers.
+All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+const sellerForm =
+document.getElementById("sellerForm");
+
+const successMessage =
+document.getElementById("successMessage");
+
+
+sellerForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const formData =
+        new FormData(sellerForm);
+
+
+        const enquiry = {
+
+            name:
+            formData.get("name"),
+
+            phone:
+            formData.get("phone"),
+
+            asset:
+            formData.get("asset"),
+
+            location:
+            formData.get("location"),
+
+            price:
+            formData.get("price"),
+
+            contact:
+            formData.get("contact"),
+
+            quantity:
+            formData.get("quantity"),
+
+            description:
+            formData.get("description"),
+
+            photos:
+            formData.get("photos"),
+
+            date:
+            new Date().toLocaleString()
+
+        };
+
+
+        let enquiries =
+        JSON.parse(
+            localStorage.getItem(
+                "smSellerEnquiries"
+            )
+        ) || [];
+
+
+        enquiries.push(enquiry);
+
+
+        localStorage.setItem(
+            "smSellerEnquiries",
+            JSON.stringify(enquiries)
+        );
+
+
+        successMessage.style.display =
+        "block";
+
+
+        sellerForm.reset();
+
+
+        window.scrollTo({
+
+            top:
+            successMessage.offsetTop - 100,
+
+            behavior:
+            "smooth"
+
+        });
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

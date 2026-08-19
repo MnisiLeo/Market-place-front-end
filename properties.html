@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+SM Properties | Properties
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f1e7;
+    color:#2b2118;
+}
+
+.top-bar{
+    background:#2b1b12;
+    color:#f2c14e;
+    text-align:center;
+    padding:8px;
+    font-size:13px;
+}
+
+header{
+    background:#3b2418;
+    padding:18px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+}
+
+.logo h1{
+    color:white;
+    font-size:22px;
+}
+
+.logo span{
+    color:#f2c14e;
+    font-size:13px;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#f2c14e;
+}
+
+.contact{
+    background:#d9a441;
+    color:#2b1b12 !important;
+    padding:10px 16px;
+    border-radius:5px;
+}
+
+.hero{
+    background:#3b2418;
+    color:white;
+    text-align:center;
+    padding:65px 20px;
+}
+
+.hero small{
+    color:#f2c14e;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.hero h2{
+    font-size:42px;
+    margin:10px 0;
+}
+
+.hero p{
+    color:#dfd1c4;
+    max-width:700px;
+    margin:auto;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.filters{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.07);
+}
+
+.filters input,
+.filters select{
+    padding:12px;
+
+    border:1px solid #d7c8b8;
+
+    border-radius:5px;
+
+    font-size:14px;
+}
+
+.listings{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.property-card{
+    background:white;
+
+    border-radius:9px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 20px rgba(59,36,24,.12);
+}
+
+.property-card img{
+    width:100%;
+    height:230px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.status{
+    display:inline-block;
+
+    background:#e4f3e5;
+    color:#285b2c;
+
+    padding:5px 9px;
+
+    border-radius:4px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.card-body h3{
+    color:#3b2418;
+    font-size:21px;
+
+    margin-bottom:8px;
+}
+
+.location{
+    color:#8a6a4a;
+
+    font-size:14px;
+
+    margin-bottom:12px;
+}
+
+.details{
+    border-top:1px solid #eee0d2;
+
+    border-bottom:1px solid #eee0d2;
+
+    padding:12px 0;
+
+    margin-bottom:12px;
+}
+
+.details p{
+    font-size:13px;
+    color:#6b5e54;
+
+    margin-bottom:5px;
+}
+
+.price{
+    color:#a97818;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    margin-bottom:15px;
+}
+
+.description{
+    color:#6b5e54;
+
+    font-size:13px;
+
+    margin-bottom:18px;
+}
+
+.contact-btn{
+    display:block;
+
+    background:#3b2418;
+
+    color:white;
+
+    text-align:center;
+
+    padding:11px;
+
+    border-radius:5px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+}
+
+.contact-btn:hover{
+    background:#d9a441;
+    color:#2b1b12;
+}
+
+.empty{
+    grid-column:1/-1;
+
+    background:white;
+
+    text-align:center;
+
+    padding:60px 25px;
+
+    border-radius:9px;
+
+    color:#6b5e54;
+}
+
+.empty h3{
+    color:#3b2418;
+    margin-bottom:10px;
+}
+
+footer{
+    background:#24150e;
+    color:white;
+
+    padding:40px 7% 20px;
+}
+
+.footer-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+footer h3{
+    color:#f2c14e;
+    margin-bottom:12px;
+}
+
+footer a,
+footer p{
+    display:block;
+
+    color:#d7cabe;
+
+    font-size:14px;
+
+    margin-bottom:7px;
+
+    text-decoration:none;
+}
+
+.copy{
+    border-top:1px solid #4a3528;
+
+    margin-top:30px;
+
+    padding-top:18px;
+
+    text-align:center;
+
+    color:#b9a99c;
+
+    font-size:13px;
+}
+
+@media(max-width:800px){
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .listings{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .listings{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="top-bar">
+
+SM PROPERTIES AND LIVESTOCK BROKERS
+| ESWATINI
+
+</div>
+
+
+<header>
+
+
+<div class="logo">
+
+<h1>
+SM PROPERTIES
+</h1>
+
+<span>
+AND LIVESTOCK BROKERS
+</span>
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a
+href="contact.html"
+class="contact">
+
+Contact
+
+</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<small>
+PROPERTY COLLECTION
+</small>
+
+<h2>
+Available Properties
+</h2>
+
+<p>
+
+Explore land and property opportunities
+available through SM Properties and
+Livestock Brokers.
+
+</p>
+
+</section>
+
+
+<div class="container">
+
+
+<div class="filters">
+
+
+<input
+type="text"
+id="search"
+placeholder="Search properties..."
+>
+
+
+<select id="typeFilter">
+
+<option value="">
+All Property Types
+</option>
+
+<option>
+Agricultural Land
+</option>
+
+<option>
+Farm
+</option>
+
+<option>
+Residential Land
+</option>
+
+<option>
+Commercial Property
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+
+<select id="locationFilter">
+
+<option value="">
+All Locations
+</option>
+
+</select>
+
+
+</div>
+
+
+<div
+class="listings"
+id="propertyListings">
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+SM Properties
+</h3>
+
+<p>
+Connecting Opportunities. Closing Deals.
+</p>
+
+<p>
+Professional property and livestock
+brokerage services in Eswatini.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+WhatsApp: Coming Soon
+</p>
+
+<p>
+Email: Coming Soon
+</p>
+
+<p>
+Facebook: Coming Soon
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copy">
+
+© 2026 SM Properties and Livestock Brokers.
+All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+
+/* ================================
+   LOAD PROPERTIES FROM ADMIN
+================================ */
+
+
+let properties =
+JSON.parse(
+localStorage.getItem(
+"smPropertyListings"
+)
+) || [];
+
+
+/* ================================
+   DISPLAY PROPERTIES
+================================ */
+
+
+function displayProperties(){
+
+const container =
+document.getElementById(
+"propertyListings"
+);
+
+const search =
+document.getElementById(
+"search"
+).value.toLowerCase();
+
+const type =
+document.getElementById(
+"typeFilter"
+).value;
+
+const location =
+document.getElementById(
+"locationFilter"
+).value;
+
+
+container.innerHTML="";
+
+
+const filtered =
+properties.filter(
+function(property){
+
+const matchesSearch =
+(
+property.title || ""
+).toLowerCase()
+.includes(search)
+||
+(
+property.description || ""
+).toLowerCase()
+.includes(search)
+||
+(
+property.location || ""
+).toLowerCase()
+.includes(search);
+
+
+const matchesType =
+!type ||
+property.type === type;
+
+
+const matchesLocation =
+!location ||
+property.location === location;
+
+
+return
+matchesSearch &&
+matchesType &&
+matchesLocation;
+
+});
+
+
+if(filtered.length===0){
+
+container.innerHTML=`
+
+<div class="empty">
+
+<h3>
+No Properties Found
+</h3>
+
+<p>
+There are currently no matching
+properties available.
+
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+filtered.forEach(
+function(property){
+
+const card =
+document.createElement(
+"div"
+);
+
+card.className=
+"property-card";
+
+
+card.innerHTML=`
+
+<img
+src="${property.image}"
+alt="${property.title}"
+>
+
+
+<div class="card-body">
+
+
+<span class="status">
+
+${property.status || "AVAILABLE"}
+
+</span>
+
+
+<h3>
+
+${property.title}
+
+</h3>
+
+
+<p class="location">
+
+📍 ${property.location}
+
+</p>
+
+
+<div class="details">
+
+<p>
+
+<strong>
+Property Type:
+</strong>
+
+${property.type || "Property"}
+
+</p>
+
+
+<p>
+
+<strong>
+Land Size:
+</strong>
+
+${property.size || "Not specified"}
+
+</p>
+
+</div>
+
+
+<div class="price">
+
+${property.price || "Contact Us"}
+
+</div>
+
+
+<p class="description">
+
+${property.description || ""}
+
+</p>
+
+
+<a
+href="contact.html"
+class="contact-btn">
+
+Enquire About Property
+
+</a>
+
+
+</div>
+
+`;
+
+
+container.appendChild(card);
+
+});
+
+}
+
+
+/* ================================
+   LOCATION FILTER
+================================ */
+
+
+function loadLocations(){
+
+const locationFilter =
+document.getElementById(
+"locationFilter"
+);
+
+
+const locations =
+[
+...new Set(
+properties
+.map(
+function(property){
+
+return property.location;
+
+}
+)
+)
+];
+
+
+locations.forEach(
+function(location){
+
+if(!location){
+return;
+}
+
+const option =
+document.createElement(
+"option"
+);
+
+option.value=location;
+
+option.textContent=location;
+
+locationFilter.appendChild(
+option
+);
+
+});
+
+}
+
+
+/* ================================
+   FILTER EVENTS
+================================ */
+
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+displayProperties
+);
+
+
+document
+.getElementById("typeFilter")
+.addEventListener(
+"change",
+displayProperties
+);
+
+
+document
+.getElementById("locationFilter")
+.addEventListener(
+"change",
+displayProperties
+);
+
+
+/* ================================
+   START
+================================ */
+
+
+loadLocations();
+
+displayProperties();
+
+
+</script>
+
+
+</body>
+
+</html>

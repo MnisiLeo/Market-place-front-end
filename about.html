@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | SM Properties & Livestock Brokers</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f1e7;
+    color: #2b2118;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* TOP BAR */
+
+.top-bar {
+    background: #2b1b12;
+    color: #f2c14e;
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+
+/* HEADER */
+
+header {
+    background: #3b2418;
+    color: white;
+    padding: 18px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.logo-area h1 {
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.logo-area span {
+    display: block;
+    color: #f2c14e;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f2c14e;
+}
+
+.contact-button {
+    background: #d9a441;
+    color: #2b1b12;
+    padding: 10px 17px;
+    border-radius: 5px;
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 85px 7%;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(59,36,24,0.88),
+            rgba(59,36,24,0.88)
+        ),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.hero h2 span {
+    color: #f2c14e;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: auto;
+    color: #eee2d2;
+}
+
+
+/* ABOUT INTRO */
+
+.about-section {
+    padding: 75px 7%;
+    background: #fffaf2;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.about-text small {
+    color: #a97818;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.about-text h2 {
+    color: #3b2418;
+
+    font-size: 34px;
+
+    margin: 8px 0 18px;
+}
+
+.about-text p {
+    color: #6b5e54;
+
+    margin-bottom: 15px;
+}
+
+.about-image {
+    min-height: 390px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            rgba(59,36,24,0.18),
+            rgba(59,36,24,0.18)
+        ),
+        url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(59,36,24,0.12);
+}
+
+
+/* MISSION */
+
+.mission {
+    padding: 75px 7%;
+
+    background: #f7f1e7;
+
+    text-align: center;
+}
+
+.mission h2 {
+    color: #3b2418;
+
+    font-size: 33px;
+
+    margin-bottom: 15px;
+}
+
+.mission > p {
+    max-width: 780px;
+
+    margin: auto;
+
+    color: #6b5e54;
+}
+
+
+/* OBJECTIVES */
+
+.objectives {
+    padding: 75px 7%;
+
+    background: #fffaf2;
+}
+
+.objectives h2 {
+    text-align: center;
+
+    color: #3b2418;
+
+    font-size: 33px;
+
+    margin-bottom: 40px;
+}
+
+.objective-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.objective-card {
+    background: #f7f1e7;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    border-left: 4px solid #d9a441;
+}
+
+.objective-number {
+    color: #a97818;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.objective-card h3 {
+    color: #3b2418;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.objective-card p {
+    color: #6b5e54;
+
+    font-size: 14px;
+}
+
+
+/* WHY US */
+
+.why-us {
+    padding: 75px 7%;
+
+    background: #3b2418;
+
+    color: white;
+
+    text-align: center;
+}
+
+.why-us h2 {
+    color: #f2c14e;
+
+    font-size: 33px;
+
+    margin-bottom: 35px;
+}
+
+.why-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.why-card {
+    padding: 25px 18px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border-radius: 8px;
+}
+
+.why-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.why-card h3 {
+    color: #f2c14e;
+
+    margin-bottom: 7px;
+}
+
+.why-card p {
+    color: #eadfd3;
+
+    font-size: 13px;
+}
+
+
+/* MOTTO */
+
+.motto {
+    padding: 70px 7%;
+
+    background: #d9a441;
+
+    color: #2b1b12;
+
+    text-align: center;
+}
+
+.motto small {
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.motto h2 {
+    font-size: 38px;
+
+    margin-top: 8px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #24150e;
+
+    color: white;
+
+    padding: 45px 7% 20px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+footer h3 {
+    color: #f2c14e;
+
+    margin-bottom: 12px;
+}
+
+footer p,
+footer a {
+    color: #d7cabe;
+
+    font-size: 14px;
+
+    display: block;
+
+    margin-bottom: 7px;
+}
+
+.copyright {
+    border-top: 1px solid #4a3528;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #b9a99c;
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    header {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .objective-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 280px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+SM PROPERTIES AND LIVESTOCK BROKERS
+&nbsp; | &nbsp;
+ESWATINI
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo-area">
+
+<h1>
+SM PROPERTIES
+</h1>
+
+<span>
+AND LIVESTOCK BROKERS
+</span>
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html" class="contact-button">
+Contact
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>
+About <span>SM Properties</span>
+</h2>
+
+<p>
+
+Connecting buyers and sellers of property
+and livestock across Eswatini.
+
+</p>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about-section">
+
+<div class="about-container">
+
+
+<div class="about-text">
+
+<small>
+WHO WE ARE
+</small>
+
+<h2>
+Connecting Opportunities. Closing Deals.
+</h2>
+
+<p>
+
+SM Properties and Livestock Brokers is a
+brokerage company that connects sellers
+and buyers of property and livestock,
+facilitating transactions on their behalf
+and earning a commission for successful
+deals.
+
+</p>
+
+<p>
+
+The company acts as a professional
+middleman, making it easier, faster and
+more reliable for people to buy and sell
+property and livestock in Eswatini.
+
+</p>
+
+<p>
+
+Our role is to identify opportunities,
+connect the right people and help
+facilitate the transaction from the
+initial agreement through to completion.
+
+</p>
+
+</div>
+
+
+<div class="about-image">
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- MISSION -->
+
+<section class="mission">
+
+<h2>
+Our Mission
+</h2>
+
+<p>
+
+To create reliable connections between
+buyers and sellers while making property
+and livestock transactions more convenient,
+transparent and efficient.
+
+</p>
+
+</section>
+
+
+<!-- OBJECTIVES -->
+
+<section class="objectives">
+
+<h2>
+Our Business Objectives
+</h2>
+
+
+<div class="objective-grid">
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+01
+</div>
+
+<h3>
+Identify Opportunities
+</h3>
+
+<p>
+
+Actively search the market for properties
+and livestock and approach owners with
+potential selling opportunities.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+02
+</div>
+
+<h3>
+Assist Owners
+</h3>
+
+<p>
+
+Encourage and assist owners to list their
+assets through SM Properties and Livestock
+Brokers.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+03
+</div>
+
+<h3>
+Market Assets
+</h3>
+
+<p>
+
+Promote properties and livestock through
+social media, our company website and
+other suitable marketing channels.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+04
+</div>
+
+<h3>
+Match Buyers & Sellers
+</h3>
+
+<p>
+
+Find and match buyers with suitable
+opportunities based on their needs,
+preferences and budget.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+05
+</div>
+
+<h3>
+Negotiate Terms
+</h3>
+
+<p>
+
+Facilitate communication and negotiations
+between buyers and sellers to help reach
+mutually beneficial agreements.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+06
+</div>
+
+<h3>
+Facilitate Transactions
+</h3>
+
+<p>
+
+Coordinate with valuators, legal
+professionals and other relevant experts
+when necessary.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+07
+</div>
+
+<h3>
+Support Completion
+</h3>
+
+<p>
+
+Help ensure a smooth transaction process
+from agreement through to final transfer.
+
+</p>
+
+</div>
+
+
+<div class="objective-card">
+
+<div class="objective-number">
+08
+</div>
+
+<h3>
+Build Long-Term Trust
+</h3>
+
+<p>
+
+Develop reliable relationships with buyers,
+sellers, property owners, livestock owners
+and professional partners.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="why-us">
+
+<h2>
+Why Work With Us?
+</h2>
+
+
+<div class="why-grid">
+
+
+<div class="why-card">
+
+<div class="why-icon">
+🤝
+</div>
+
+<h3>
+Professional Connection
+</h3>
+
+<p>
+
+We bring buyers and sellers together
+and help simplify the process.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+📢
+</div>
+
+<h3>
+Market Exposure
+</h3>
+
+<p>
+
+We use our website and digital platforms
+to reach potential buyers.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+🎯
+</div>
+
+<h3>
+Suitable Matches
+</h3>
+
+<p>
+
+We focus on connecting opportunities
+with buyers who are looking for them.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+💬
+</div>
+
+<h3>
+Negotiation Support
+</h3>
+
+<p>
+
+We help facilitate communication around
+prices and transaction terms.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+📋
+</div>
+
+<h3>
+Transaction Support
+</h3>
+
+<p>
+
+We help coordinate the process and
+relevant professional services.
+
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+🇸🇿
+</div>
+
+<h3>
+Eswatini Focused
+</h3>
+
+<p>
+
+Our business is focused on connecting
+property and livestock opportunities
+within Eswatini.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- MOTTO -->
+
+<section class="motto">
+
+<small>
+OUR MOTTO
+</small>
+
+<h2>
+Connecting Opportunities. Closing Deals.
+</h2>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+SM Properties
+</h3>
+
+<p>
+Connecting Opportunities. Closing Deals.
+</p>
+
+<p>
+Professional property and livestock
+brokerage services in Eswatini.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="properties.html">
+Properties
+</a>
+
+<a href="livestock.html">
+Livestock
+</a>
+
+<a href="sell.html">
+Sell With Us
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+WhatsApp: Coming Soon
+</p>
+
+<p>
+Email: Coming Soon
+</p>
+
+<p>
+Facebook: Coming Soon
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 SM Properties and Livestock Brokers.
+All Rights Reserved.
+
+</div>
+
+
+</footer>
+
+
+</body>
+
+</html>
